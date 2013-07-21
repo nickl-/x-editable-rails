@@ -9,7 +9,7 @@ module X
             data_url = options[:nested_model] ? polymorphic_path([options[:nested_model], object]) : polymorphic_path(object)
             content_tag(
                 :a,
-                object.send(method),
+                options[:e],
                 :href => "#",
                 :class => "editable",
                 :data => {
