@@ -87,10 +87,8 @@ To send appropriate json to our rails controller which excepts json PUT requests
                 dataType: 'json'
             },
             params: function(par) {
-                console.log(par)
                 params = {id: par.pk};
                 params[par.name] = par.value;
-                console.log(params);
                 return JSON.stringify(params);
             }
         };
