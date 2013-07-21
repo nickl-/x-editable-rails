@@ -77,9 +77,29 @@ When updating nested attributes also:
 1. data-nested
 2. data-nid
 
-And don't forget to activate it
-```coffee
-$('.editable').editable()
+To send appropriate json to our rails controller which excepts json PUT requests add the following defaults in application.js.
+```javascript
+        $.fn.editable.defaults = {
+            ajaxOptions: {
+                type: "PUT",
+                accept: "application/json",
+                contentType: 'application/json; charset=UTF-8',
+                dataType: 'json'
+            },
+            params: function(par) {
+                console.log(par)
+                params = {id: par.pk};
+                params[par.name] = par.value;
+                console.log(params);
+                return JSON.stringify(params);
+            }
+        };
+```
+
+
+And don't forget to activate it by placing the following in application.js as well.
+```javascript
+        $('.editable').editable();
 ```
 
 ## Contributing
