@@ -77,7 +77,7 @@ When updating nested attributes also:
 1. data-nested
 2. data-nid
 
-To send appropriate json to our rails controller which excepts json PUT requests add the following defaults in application.js.
+To send appropriate json to our rails controller which accepts json PUT requests add the following defaults in application.js.
 ```javascript
         $.fn.editable.defaults = {
             ajaxOptions: {
